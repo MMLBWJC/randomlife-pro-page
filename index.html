@@ -4,26 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RandomLife PRO</title>
-    <link rel="stylesheet" href="./pro.css?v=carousel-timing-1" />
+    <link rel="stylesheet" href="./pro.css?v=sticky-nav-2" />
   </head>
   <body>
     <main class="pro-page" id="pro-page" aria-label="RandomLife PRO 推广页">
-      <section class="pro-stage" id="pro-stage">
-        <header class="topbar">
-          <a class="brand" href="#" aria-label="生涯问向首页">
-            <img class="brand-mark" src="./img/logo-mark.svg" alt="" />
-            <img class="brand-text" src="./img/logo-text.svg" alt="生涯问向" />
-          </a>
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="生涯问向首页">
+          <img class="brand-mark" src="./img/logo-mark.svg" alt="" />
+          <img class="brand-text" src="./img/logo-text.svg" alt="生涯问向" />
+        </a>
 
-          <div class="user-area">
-            <span class="user-name">Say My Name</span>
-            <span class="divider" aria-hidden="true"></span>
-            <span class="avatar"><img src="./img/avatar.png" alt="" /></span>
-            <button class="menu-button" type="button" aria-label="打开菜单">
-              <img src="./img/menu.svg" alt="" />
-            </button>
-          </div>
-        </header>
+        <div class="user-area">
+          <span class="user-name">Say My Name</span>
+          <span class="divider" aria-hidden="true"></span>
+          <span class="avatar"><img src="./img/avatar.png" alt="" /></span>
+          <button class="menu-button" type="button" aria-label="打开菜单">
+            <img src="./img/menu.svg" alt="" />
+          </button>
+        </div>
+      </header>
+
+      <section class="pro-stage" id="pro-stage">
 
         <section class="hero">
           <div class="hero-copy">
@@ -133,7 +134,7 @@
       </section>
     </main>
 
-    <script src="./pro.js?v=carousel-timing-1"></script>
+    <script src="./pro.js?v=sticky-nav-2"></script>
     <script>
       window.scrollToPlans = function () {
         var plansSection = document.querySelector(".plans");
@@ -143,7 +144,7 @@
         }
 
         var sectionTop = plansSection.getBoundingClientRect().top + window.scrollY;
-        var targetTop = Math.max(0, sectionTop - window.innerHeight * 0.2);
+        var targetTop = Math.max(0, sectionTop - window.innerHeight * 0.27);
         var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
         window.scrollTo({

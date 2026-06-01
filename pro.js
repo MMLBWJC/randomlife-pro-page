@@ -146,7 +146,7 @@ function setupHeroUnlockScroll() {
 
   const scrollToPlans = () => {
     const sectionTop = plansSection.getBoundingClientRect().top + window.scrollY;
-    const targetTop = Math.max(0, sectionTop - window.innerHeight * 0.2);
+    const targetTop = Math.max(0, sectionTop - window.innerHeight * 0.27);
 
     window.scrollTo({
       top: targetTop,

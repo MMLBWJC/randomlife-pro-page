@@ -23,7 +23,7 @@ body {
   width: 100%;
   min-height: 100%;
   margin: 0;
-  background: var(--bg);
+  background: #080808;
   color: var(--text);
   font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
 }
@@ -43,7 +43,7 @@ button {
   min-width: 1280px;
   min-height: calc(2533px * var(--scale));
   overflow: hidden;
-  background: var(--bg);
+  background: #080808;
 }
 
 .pro-stage {
@@ -59,15 +59,19 @@ button {
 }
 
 .topbar {
-  position: absolute;
-  left: 40px;
-  top: 20px;
-  z-index: 5;
-  width: 1840px;
-  height: 60px;
+  position: fixed;
+  left: 50%;
+  top: 0;
+  z-index: 30;
+  width: 1920px;
+  height: 108px;
+  padding: 0 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: #080808;
+  transform: translateX(-50%) scale(var(--scale));
+  transform-origin: top center;
 }
 
 .brand {
