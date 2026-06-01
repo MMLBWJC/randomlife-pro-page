@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RandomLife PRO</title>
-    <link rel="stylesheet" href="./pro.css?v=carousel-2" />
+    <link rel="stylesheet" href="./pro.css?v=unlock-scroll-2" />
   </head>
   <body>
     <main class="pro-page" id="pro-page" aria-label="RandomLife PRO 推广页">
@@ -34,7 +34,7 @@
               <li>动态职业评估动态职业评估动态职业</li>
             </ul>
             <div class="hero-actions fade-rise load-rise" style="--delay: 360ms">
-              <button class="primary-btn" type="button">立即解锁</button>
+              <a class="primary-btn" id="unlock-plans-button" href="#plans-scroll-target" onclick="window.scrollToPlans && (event.preventDefault(), window.scrollToPlans())">立即解锁</a>
               <button class="link-btn" type="button">已有激活码</button>
             </div>
           </div>
@@ -57,6 +57,7 @@
           </div>
         </section>
 
+        <span class="plans-scroll-target" id="plans-scroll-target" aria-hidden="true"></span>
         <section class="plans">
           <h2 class="section-title fade-rise">RandomLife PRO，陪你度过<span>求职全周期</span>！</h2>
           <div class="plan-grid">
@@ -132,6 +133,24 @@
       </section>
     </main>
 
-    <script src="./pro.js?v=carousel-2"></script>
+    <script src="./pro.js?v=unlock-scroll-2"></script>
+    <script>
+      window.scrollToPlans = function () {
+        var plansSection = document.querySelector(".plans");
+
+        if (!plansSection) {
+          return;
+        }
+
+        var sectionTop = plansSection.getBoundingClientRect().top + window.scrollY;
+        var targetTop = Math.max(0, sectionTop - window.innerHeight * 0.28);
+        var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        window.scrollTo({
+          top: targetTop,
+          behavior: reducedMotion ? "auto" : "smooth",
+        });
+      };
+    </script>
   </body>
 </html>

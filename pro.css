@@ -244,6 +244,9 @@ h1 span,
 }
 
 .primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 360px;
   height: 46px;
   border-radius: 16px;
@@ -251,6 +254,7 @@ h1 span,
   font-size: 20px;
   line-height: 40px;
   letter-spacing: 2.4px;
+  text-decoration: none;
   transition: transform 180ms ease, background-color 180ms ease;
 }
 
@@ -401,6 +405,15 @@ h1 span,
   left: 360px;
   top: 1028px;
   width: 1200px;
+}
+
+.plans-scroll-target {
+  position: absolute;
+  left: 0;
+  top: 611px;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
 }
 
 .section-title {

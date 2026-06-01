@@ -140,3 +140,27 @@ function setupHeroCarousel() {
 }
 
 setupHeroCarousel();
+
+function setupHeroUnlockScroll() {
+  const unlockButton = document.querySelector("#unlock-plans-button");
+  const plansSection = document.querySelector(".plans");
+
+  if (!unlockButton || !plansSection) {
+    return;
+  }
+
+  const scrollToPlans = () => {
+    const sectionTop = plansSection.getBoundingClientRect().top + window.scrollY;
+    const targetTop = Math.max(0, sectionTop - window.innerHeight * 0.28);
+
+    window.scrollTo({
+      top: targetTop,
+      behavior: prefersReducedMotion.matches ? "auto" : "smooth",
+    });
+  };
+
+  window.scrollToPlans = scrollToPlans;
+  unlockButton.addEventListener("click", scrollToPlans);
+}
+
+setupHeroUnlockScroll();
