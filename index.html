@@ -133,7 +133,7 @@
       </section>
     </main>
 
-    <script src="./pro.js?v=unlock-scroll-2"></script>
+    <script src="./pro.js?v=unlock-scroll-3"></script>
     <script>
       window.scrollToPlans = function () {
         var plansSection = document.querySelector(".plans");
@@ -143,7 +143,7 @@
         }
 
         var sectionTop = plansSection.getBoundingClientRect().top + window.scrollY;
-        var targetTop = Math.max(0, sectionTop - window.innerHeight * 0.28);
+        var targetTop = Math.max(0, sectionTop - window.innerHeight * 0.2);
         var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
         window.scrollTo({
