@@ -326,13 +326,19 @@ h1 span,
   animation: carouselImageIn 820ms ease-in-out forwards;
 }
 
+.carousel-slide.is-leaving {
+  z-index: 1;
+  animation: carouselImageOut 300ms ease-in forwards 140ms;
+}
+
 .carousel-dots {
   position: absolute;
   left: 36px;
-  bottom: 190px;
+  bottom: 136px;
   display: flex;
   gap: 18px;
   z-index: 3;
+  pointer-events: none;
 }
 
 .carousel-dots button {
@@ -352,7 +358,7 @@ h1 span,
 .carousel-arrows {
   position: absolute;
   right: 23px;
-  bottom: 174px;
+  bottom: 121px;
   display: flex;
   gap: 52px;
   z-index: 3;
@@ -704,6 +710,16 @@ h1 span,
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes carouselImageOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
   }
 }
 

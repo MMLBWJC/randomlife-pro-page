@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RandomLife PRO</title>
-    <link rel="stylesheet" href="./pro.css?v=unlock-scroll-2" />
+    <link rel="stylesheet" href="./pro.css?v=carousel-timing-1" />
   </head>
   <body>
     <main class="pro-page" id="pro-page" aria-label="RandomLife PRO 推广页">
@@ -45,10 +45,10 @@
               <img class="carousel-slide" src="./img/pro-hero-placeholder-2.png" alt="" />
               <img class="carousel-slide" src="./img/pro-hero-placeholder-3.png" alt="" />
             </div>
-            <div class="carousel-dots" aria-label="轮播图分页">
-              <button class="is-active" type="button" aria-label="切换到第 1 张"></button>
-              <button type="button" aria-label="切换到第 2 张"></button>
-              <button type="button" aria-label="切换到第 3 张"></button>
+            <div class="carousel-dots" aria-hidden="true">
+              <button class="is-active" type="button" tabindex="-1"></button>
+              <button type="button" tabindex="-1"></button>
+              <button type="button" tabindex="-1"></button>
             </div>
             <div class="carousel-arrows">
               <button class="carousel-arrow prev" type="button" aria-label="上一张"></button>
@@ -133,7 +133,7 @@
       </section>
     </main>
 
-    <script src="./pro.js?v=unlock-scroll-3"></script>
+    <script src="./pro.js?v=carousel-timing-1"></script>
     <script>
       window.scrollToPlans = function () {
         var plansSection = document.querySelector(".plans");

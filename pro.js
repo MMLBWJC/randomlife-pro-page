@@ -67,7 +67,7 @@ function setupHeroCarousel() {
   const dots = Array.from(carousel.querySelectorAll(".carousel-dots button"));
   const prevButton = carousel.querySelector(".carousel-arrow.prev");
   const nextButton = carousel.querySelector(".carousel-arrow.next");
-  const intervalTime = 4200;
+  const intervalTime = 3000;
   let currentIndex = 0;
   let timer = 0;
   let transitionId = 0;
@@ -86,7 +86,7 @@ function setupHeroCarousel() {
 
     slides.forEach((slide, index) => {
       if (index !== currentIndex && index !== normalizedIndex) {
-        slide.classList.remove("is-active", "is-entering");
+        slide.classList.remove("is-active", "is-entering", "is-leaving");
       }
     });
 
@@ -94,7 +94,9 @@ function setupHeroCarousel() {
 
     currentIndex = normalizedIndex;
     nextSlide.classList.remove("is-entering");
+    previousSlide.classList.remove("is-leaving");
     void nextSlide.offsetWidth;
+    previousSlide.classList.add("is-leaving");
     nextSlide.classList.add("is-active", "is-entering");
     dots[currentIndex].classList.add("is-active");
 
@@ -103,7 +105,7 @@ function setupHeroCarousel() {
         return;
       }
 
-      previousSlide.classList.remove("is-active");
+      previousSlide.classList.remove("is-active", "is-leaving");
       nextSlide.classList.remove("is-entering");
     };
 
@@ -127,13 +129,6 @@ function setupHeroCarousel() {
   nextButton.addEventListener("click", () => {
     showSlide(currentIndex + 1);
     restartAutoplay();
-  });
-
-  dots.forEach((dot, index) => {
-    dot.addEventListener("click", () => {
-      showSlide(index);
-      restartAutoplay();
-    });
   });
 
   restartAutoplay();
